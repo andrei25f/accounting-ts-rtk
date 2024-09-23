@@ -1,0 +1,3 @@
+export enum UpdateMode {
+    DEFAULT, EDITPROFILE, CHANGEPASSWORD
+}
