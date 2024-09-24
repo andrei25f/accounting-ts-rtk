@@ -24,11 +24,6 @@ const ChangePassword = ({ close }: Props) => {
         }
     }
 
-    const handleClickClose = () => {
-        alert('Close change password without save')
-        close();
-    }
-
     return (
         <div>
             <label>Old password:
@@ -41,7 +36,7 @@ const ChangePassword = ({ close }: Props) => {
                 <input onChange={e => setRepeatPassword(e.target.value)} value={repeatPassword} type="password" />
             </label>
             <button onClick={handleClickSave}>Save and Close</button>
-            <button onClick={handleClickClose}>Close without Save</button>
+            <button onClick={close}>Close without Save</button>
             <button onClick={handleClickClear}>Clear</button>
         </div>
     )

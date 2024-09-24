@@ -18,11 +18,6 @@ const EditProfile = ({ close }: Props) => {
         close();
     }
 
-    const handleClickClose = () => {
-        alert('Close edit profile without save')
-        close();
-    }
-
     return (
         <div>
             <label>First name:
@@ -32,7 +27,7 @@ const EditProfile = ({ close }: Props) => {
                 <input onChange={e => setLastName(e.target.value)} value={lastName} type="text" />
             </label>
             <button onClick={handleClickSave}>Save and Close</button>
-            <button onClick={handleClickClose}>Close without Save</button>
+            <button onClick={close}>Close without Save</button>
             <button onClick={handleClickClear}>Clear</button>
         </div>
     )
