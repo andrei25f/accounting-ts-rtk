@@ -20,7 +20,7 @@ const ChangePassword = ({ close }: Props) => {
 
     const handleClickSave = () => {
         if (newPassword === repeatPassword) {
-            dispatch(changePassword(newPassword));
+            dispatch(changePassword([newPassword, oldPassword]));
             close();
         } else { 
             alert('New password and repeat password are different')
