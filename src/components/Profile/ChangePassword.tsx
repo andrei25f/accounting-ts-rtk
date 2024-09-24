@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { UpdateMode } from "../../utils/types.d";
 
 interface Props {
-    setUpdateMode: React.Dispatch<React.SetStateAction<UpdateMode>>
+    close: () => void
 }
 
-const ChangePassword = ({ setUpdateMode }: Props) => {
+const ChangePassword = ({ close }: Props) => {
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
@@ -19,6 +18,7 @@ const ChangePassword = ({ setUpdateMode }: Props) => {
     const handleClickSave = () => {
         if (newPassword === repeatPassword) {
             alert('Save updated password and close form')
+            close();
         } else { 
             alert('New password and repeat password are different')
         }
@@ -26,7 +26,7 @@ const ChangePassword = ({ setUpdateMode }: Props) => {
 
     const handleClickClose = () => {
         alert('Close change password without save')
-        setUpdateMode(UpdateMode.DEFAULT);
+        close();
     }
 
     return (

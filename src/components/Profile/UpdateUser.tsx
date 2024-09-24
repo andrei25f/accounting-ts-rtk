@@ -5,11 +5,16 @@ import { UpdateMode } from "../../utils/types.d";
 
 const UpdateUser = () => {
     const [updateMode, setUpdateMode] = useState(UpdateMode.DEFAULT);
+
+    const close = () => {
+        setUpdateMode(UpdateMode.DEFAULT);
+    }
+
     switch (updateMode) {
         case UpdateMode.EDITPROFILE:
-            return <EditProfile setUpdateMode={setUpdateMode} />
+            return <EditProfile close={close} />
         case UpdateMode.CHANGEPASSWORD:
-            return <ChangePassword setUpdateMode={setUpdateMode} />
+            return <ChangePassword close={close} />
         default:
             return (
                 <div>
